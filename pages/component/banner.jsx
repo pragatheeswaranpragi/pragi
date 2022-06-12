@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Typical from 'react-typical';
+import Image from 'next/image'
 
 
 export default function Banner() {
@@ -10,7 +11,7 @@ return (
             <div className="flex relative z-20 items-center">
                 <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
                     <div className="flex flex-col">
-                        <img src="/img/pragi.jpg" className="rounded-full w-28 mx-auto" />
+                        <img src="/img/pragi.jpg" className="rounded-full w-28 mx-auto" alt='Pragatheeswaran pic'/>
                         <div className="max-w-3xl mx-auto text-center pt-8">
                             <h1
                                 className="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
