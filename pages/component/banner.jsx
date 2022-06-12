@@ -11,7 +11,7 @@ return (
                 <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
                     <div className="flex flex-col">
                         <img src="/img/pragi.jpg" className="rounded-full w-28 mx-auto" />
-                        <div class="max-w-3xl mx-auto text-center pt-8">
+                        <div className="max-w-3xl mx-auto text-center pt-8">
                             <h1
                                 className="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
                                 Pragatheeswaran
