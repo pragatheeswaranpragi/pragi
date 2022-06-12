@@ -15,7 +15,7 @@ return (
         </p>
         <a
           className="inline-flex items-center px-8 py-3 mt-8 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-          href="https://www.linkedin.com/in/pragi98/" target="_blank" rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/pragi98/"
         >
           <span className="text-sm font-medium"> LinkedIn </span>
           <svg
