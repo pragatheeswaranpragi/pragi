@@ -1,12 +1,11 @@
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
 import Link from 'next/link';
+import Typical from 'react-typical';
 
 
-export default function Example() {
+export default function Banner() {
 return (
 <div>
-    <section class="text-white bg-gray-900">
+    <section className="text-white bg-gray-900">
         <main className="font-mono relative overflow-hidden py-24">
             <div className="flex relative z-20 items-center">
                 <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
@@ -20,6 +19,11 @@ return (
                                     Front-End Developer
                                 </span>
                             </h1>
+                            <div className="mt-2 bg-clip-text text-transparent bg-gradient-to-r  from-green-300 via-blue-500 to-purple-600 font-bold text-lg lg:text-3xl">
+                                <Typical loop={Infinity} steps={[ 'React' ,3000, 'Javascript'
+                                    ,3000, 'Typescript' ,3000, 'Next.js Framework', 3000 ]} 
+                                />
+                            </div>
                         </div>
                         <div className='mx-auto py-8 cursor-pointer'>
                             <Link href="mailto:pragatheespragi98@gmail.com">
