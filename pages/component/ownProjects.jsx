@@ -28,12 +28,12 @@ return (
                 <h3 className="mt-2 text-2xl sm:text-left md:text-4xl">Pragi-Prebuilt Tailwind</h3>
                 <p className="mt-5 text-lg text-gray-700 text md:text-left">It is designed and devloped for components that are commonly used in our any projects, such as navbars, sidemenus, and alert message UIs.</p>
                 <a
-          className="inline-flex w-40 items-center px-8 py-3 mt-8 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-          href="https://pragi.vercel.app/"  rel="noopener noreferrer"
-        >
+                    className="inline-flex w-40 items-center px-8 py-3 mt-8 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
+                    href="https://pragi.vercel.app/" rel="noopener noreferrer"
+                >
           <span className="text-sm font-medium">Find Out</span>
           <svg
-            classNameName="w-5 h-5 ml-3"
+            className="w-5 h-5 ml-3"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

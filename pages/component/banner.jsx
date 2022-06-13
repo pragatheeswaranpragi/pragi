@@ -15,9 +15,9 @@ return (
                         <div className="max-w-3xl mx-auto text-center pt-8">
                             <h1
                                 className="text-3xl font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
-                                Pragatheeswaran
+                                Pragatheeswaran<br />
                                 <span className="sm:block">
-                                    Front-End Developer
+                                Front-End Developer
                                 </span>
                             </h1>
                             <div className="mt-2 bg-clip-text text-transparent bg-gradient-to-r  from-green-300 via-blue-500 to-purple-600 font-bold text-lg lg:text-3xl">
