@@ -16,7 +16,7 @@ return (
 <section className="py-20 bg-white">
     <div className="flex flex-col px-8 mx-auto space-y-12 max-w-7xl xl:px-12">
         <div className="relative">
-            <h2 className="w-full text-3xl font-bold text-center sm:text-4xl md:text-5xl">Own Projects</h2>
+            <h2 className="w-full text-xl font-bold text-center sm:text-2xl md:text-3xl">Own Projects</h2>
             <p className="w-full py-8 mx-auto -mt-2 text-lg text-center text-gray-700 intro sm:max-w-3xl">Developing my career by learning new technologies</p>
         </div>
         <div className="flex flex-col mb-8 animated fadeIn sm:flex-row">
