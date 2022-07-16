@@ -4,6 +4,8 @@ import styles from '../styles/Home.module.css'
 import Banner from './component/banner';
 import Career from './component/career';
 import OwnProjects from './component/ownProjects';
+import Company from './component/company';
+import Footer from './component/footer';
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
       <Banner />
       <Career />
       <OwnProjects />
+      <Company />
+      <Footer />
     </div>
   )
 }
