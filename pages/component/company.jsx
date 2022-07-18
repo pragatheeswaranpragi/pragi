@@ -18,7 +18,7 @@ export default function company () {
           <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">UI | UX designer and Front-End Developer</h2>
           <p className="mt-1 text-gray-500 text-sm">May 2019 - Jul 2021 · 2 yrs 3 mos Experience</p>
           <div className="md:flex-grow">
-          <p className="leading-relaxed"><span className='text-lg font-semibold'>Padink engineering tracker</span>- Padink engineering tracker is an web based application used to tack a design, pipe line numbers and projects progress. I have been involved in front-end development in this project and The project required me to learn Nextjs framwork</p>
+          <p className="leading-relaxed"><span className='text-lg font-semibold'>Padink engineering tracker</span>- Padink engineering tracker is an web based application used to track a design, pipe line numbers and projects progress. I have been involved in front-end development in this project and The project required me to learn Nextjs framwork</p>
           <p className="leading-relaxed pt-5"><span className='text-lg font-semibold'>SimsLabsGlobal</span> -  it is a static website. I worked on the front-end development and ui | ux design of this project, which was developed completely in Reactjs (hooks)</p>
           <p className="leading-relaxed pt-5"><span className='text-lg font-semibold'>Preetha foundation</span> -  it's a static website. I worked on the front-end development and ui | ux design of this project, which was developed completely in Reactjs (hooks) and tailwindcss</p>
         </div>
