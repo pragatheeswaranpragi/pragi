@@ -34,8 +34,7 @@ export default function Home() {
     <meta name="google-site-verification" content="6RAzRdIOx5lJ63F0aAYkegAFWF6znGflBI8JXCQKxfg" />
     <meta name="twitter:title"
       content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
-    <meta itemprop="name"
-      content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
+    <meta itemProp="name" content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
     <meta name="application-name"
       content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
     <meta property="og:site_name" content="Pragatheeswaran k" />
