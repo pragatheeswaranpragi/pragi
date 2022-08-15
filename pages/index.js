@@ -57,7 +57,7 @@ export default function Home() {
     <meta name="distribution" content="Global" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="msapplication-tap-highlight" content="no" />
-    <meta name="apple-mobile-web-app-title" content="five star Drop Taxi" />
+    <meta name="apple-mobile-web-app-title" content="pragatheeswaran" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-touch-fullscreen" content="yes" />
