@@ -93,8 +93,8 @@ export default function Home() {
 </div> */}
       <Banner />
       <Career />
-      <OwnProjects />
       <Company />
+      <OwnProjects />
       <Footer />
     </div>
   )
