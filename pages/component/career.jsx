@@ -11,7 +11,7 @@ return (
       <div className="max-w-lg mx-auto text-center lg:text-left lg:mx-0">
         <h2 className="text-3xl font-bold sm:text-4xl">Professional Summary</h2>
         <p className="mt-4 text-gray-600">
-          I have over 3 years of experience as a front-end developer. I have emphasized the importance of scalable and well documented code, as well as a strong understanding of usability, error handling, performance, and reusability.
+          I have over 3+ years of experience as a front-end developer. I have emphasized the importance of scalable and well documented code, as well as a strong understanding of usability, error handling, performance, and reusability.
         </p>
         <a
           className="inline-flex items-center px-8 py-3 mt-8 text-white bg-indigo-600 border border-indigo-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
