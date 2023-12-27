@@ -29,11 +29,11 @@ return (
             <div className="flex relative z-20 items-center">
                 <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
                     <div className="flex flex-col">
-                        <img src="/img/pragi.jpg" className="rounded-full w-32 mx-auto" alt='Pragatheeswaran pic'/>
+                        <img src="/img/pragi.jpg" className="rounded-full object-cover object-center w-36 h-36 mx-auto" alt='Pragatheeswaran pic'/>
                         <div className="max-w-3xl mx-auto text-center pt-8">
                             <p className='font-serif'>{`Hello There, ${time}`}</p>
                             <h1
-                                className="text-5xl font-black text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 animate-text">
+                                className="px-2 text-4xl font-black text-transparent md:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 animate-text">
                                 Pragatheeswaran<br />
                                 <span className="sm:block">
                                 Front-End Developer
