@@ -26,20 +26,20 @@ export default function Home() {
     <link rel="shortcut icon" href="./favicon.svg"/>
     <meta name="viewport" content="width=device-width" />
     <meta charSet="utf-8" />
-    <title>Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing
+    <title>Pragatheeswaran K - Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing
     </title>
     <meta property="og:title"
-      content="Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
+      content="Pragatheeswaran K - Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
     <meta name="image" content="./favicon.svg" />
     <meta name="google-site-verification" content="6RAzRdIOx5lJ63F0aAYkegAFWF6znGflBI8JXCQKxfg" />
     <meta name="twitter:title"
-      content="Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
-    <meta itemProp="name" content="Pragatheeswaran K - Senior Software Engineer | React js | Typescript | Javascript | UI and UX designing" />
+      content="Pragatheeswaran K - Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
+    <meta itemProp="name" content="Pragatheeswaran K - Software Engineer | React js | Typescript | Javascript | UI and UX designing" />
     <meta name="application-name"
-      content="Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
+      content="Pragatheeswaran K - Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
     <meta property="og:site_name" content="Pragatheeswaran k" />
     <meta name="description"
-      content="Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
+      content="Pragatheeswaran K - Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="url" content="https://Pragatheeswaran.vercel.app" />
     <meta property="og:url" content="https://Pragatheeswaran.vercel.app" />
