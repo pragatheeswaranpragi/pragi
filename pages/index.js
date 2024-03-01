@@ -26,20 +26,20 @@ export default function Home() {
     <link rel="shortcut icon" href="./favicon.svg"/>
     <meta name="viewport" content="width=device-width" />
     <meta charSet="utf-8" />
-    <title>Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing
+    <title>Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing
     </title>
     <meta property="og:title"
-      content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
+      content="Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
     <meta name="image" content="./favicon.svg" />
     <meta name="google-site-verification" content="6RAzRdIOx5lJ63F0aAYkegAFWF6znGflBI8JXCQKxfg" />
     <meta name="twitter:title"
-      content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
-    <meta itemProp="name" content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
+      content="Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
+    <meta itemProp="name" content="Pragatheeswaran K - Senior Software Engineer | React js | Typescript | Javascript | UI and UX designing" />
     <meta name="application-name"
-      content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
+      content="Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
     <meta property="og:site_name" content="Pragatheeswaran k" />
     <meta name="description"
-      content="Pragatheeswaran K - Front End Developer | React js | Typescript | Javascript | UI and UX designing" />
+      content="Pragatheeswaran K - Senior Software Engineer | React js | Next Js | Typescript | Javascript | UI and UX designing" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="url" content="https://Pragatheeswaran.vercel.app" />
     <meta property="og:url" content="https://Pragatheeswaran.vercel.app" />
@@ -49,7 +49,7 @@ export default function Home() {
     <meta name="googlebot" content="index,follow" />
     <meta name="theme-color" content="#141414" />
     <meta name="msapplication-TileColor" content="#141414" />
-    <meta name="keywords" content="pragatheeswaran k, pragatheeswaran" />
+    <meta name="keywords" content="pragatheeswaran k, pragatheeswaran, pragi" />
     <meta name="imagemode" content="force" />
     <meta name="copyright" content="pragatheeswaran k" />
     <meta name="classification" content="pragatheeswaran k" />
