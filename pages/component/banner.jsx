@@ -34,7 +34,7 @@ export default function Banner() {
                   <h1 className="px-2 text-4xl font-black text-transparent md:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 animate-text">
                     Pragatheeswaran
                     <br />
-                    <span className="sm:block">Senior Software Engineer</span>
+                    <span className="sm:block">Software Engineer</span>
                   </h1>
                   <div className="mt-2 bg-clip-text text-transparent bg-gradient-to-r  from-green-300 via-blue-500 to-purple-600 font-bold text-lg lg:text-3xl">
                     <Typical
