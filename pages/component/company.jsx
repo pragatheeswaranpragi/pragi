@@ -6,7 +6,7 @@ export default function company() {
       <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="relative">
           <h2 className="w-full text-xl font-bold text-center sm:text-2xl md:text-3xl">
-            Experince
+            Experience
           </h2>
           <p className="w-full py-8 mx-auto -mt-2 text-lg text-center text-gray-700 intro sm:max-w-3xl">
             Developing my career by learning new technologies
@@ -102,13 +102,18 @@ export default function company() {
                 Senior Software Engineer
               </h2>
               <p className="mt-1 text-gray-500 text-sm">
-                Mar 2023 - Present · 0.3 yr Experience
+                Mar 2023 - Present · 1.3 yr Experience
               </p>
               <p className="leading-relaxed">
                 <span className="text-lg font-semibold">FP&A</span>- FP&A is a
                 web application, which is developed for set of planning,
                 forecasting, budgeting, and analytical activities. I have been
                 involved in front-end development of this project, which was
+                developed completely in Typescript and React.
+              </p>
+              <p className="leading-relaxed">
+                <span className="text-lg font-semibold">Spice</span>- Spice is a
+                web application, which was
                 developed completely in Typescript and React.
               </p>
             </div>
