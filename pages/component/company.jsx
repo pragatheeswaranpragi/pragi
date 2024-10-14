@@ -111,10 +111,13 @@ export default function company() {
                 involved in front-end development of this project, which was
                 developed completely in Typescript and React.
               </p>
-              <p className="leading-relaxed">
-                <span className="text-lg font-semibold">Spice</span>- Spice is a
-                web application, which was
-                developed completely in Typescript and React.
+              <p className="leading-relaxed pt-5">
+                <span className="text-lg font-semibold">Spice</span>- SPICE, an
+                open-source digital platform designed with and for health
+                systems, patients, and communities. SPICE is focused on
+                data-driven, outcomes-focused care at both the community and
+                primary care levels. The platform is certified as a digital
+                public good. I have played a key role in the front-end development of this project, which was built entirely using TypeScript and React.
               </p>
             </div>
           </div>
