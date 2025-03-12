@@ -6,6 +6,7 @@ import Career from './component/career';
 import OwnProjects from './component/ownProjects';
 import Company from './component/company';
 import Footer from './component/footer';
+import Contribution from './component/Contribution';
 
 export default function Home() {
   return (
@@ -93,6 +94,7 @@ export default function Home() {
 </div> */}
       <Banner />
       <Career />
+      <Contribution />
       <Company />
       <OwnProjects />
       <Footer />
