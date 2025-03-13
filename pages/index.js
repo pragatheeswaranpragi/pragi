@@ -86,12 +86,6 @@ export default function Home() {
       as="script" />
     <link rel="preload" href="/_next/static/chunks/pages/index-6a7b54abab432d565939.js" as="script" />
   </Head>
-      {/* <div className="relative px-4 py-3 text-white bg-indigo-600 pr-14">
-  <p className="text-sm font-medium text-left sm:text-center">
-      This page is under construction, would you like more information about me?
-    <a className="underline" href="https://pragi.vercel.app/portfolio"> Learn More &rarr; </a>
-  </p>
-</div> */}
       <Banner />
       <Career />
       <Contribution />
