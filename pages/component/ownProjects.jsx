@@ -56,7 +56,7 @@ export default function OwnProjects() {
           Developing my career by learning new technologies
         </p>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="mt-6 md:mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={index}
