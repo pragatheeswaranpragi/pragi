@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 
 export default function App() {
 
@@ -12,7 +13,7 @@ export default function App() {
     };
   
     return (
-      <div className="App">
+      <div className="App"><Head><title>Learning sandbox | Pragatheeswaran K</title><meta name="robots" content="noindex,nofollow" /></Head>
         <form onSubmit={submitForm}>
           <div>
             <input name="email" placeholder="email" />
