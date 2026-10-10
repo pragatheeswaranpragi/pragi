@@ -40,6 +40,22 @@ export default function HomeBanner() {
           </a>
         </div>
       </div>
+      <figure className="hero-portrait entrance">
+        <div className="portrait-frame">
+          <img
+            src="/img/pragatheeswaran-k.webp"
+            width="1100"
+            height="851"
+            alt="Pragatheeswaran Kasinathan"
+            fetchPriority="high"
+          />
+        </div>
+        <figcaption>
+          <span>Currently at</span>
+          <strong>Ideas2IT</strong>
+          <span>Technical Analyst · Chennai</span>
+        </figcaption>
+      </figure>
     </section>
   );
 }

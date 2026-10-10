@@ -62,13 +62,12 @@ export default function Home() {
         >
           <BrandMark />
         </a>
-        <span className="rail-edition">SELECTED WORK / 2026</span>
         <button
           className="menu-toggle"
           ref={menuRef}
           aria-expanded={menuOpen}
           aria-controls="site-nav"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((open) => !open)}
         >
           {menuOpen ? "Close" : "Menu"}{" "}
           <span aria-hidden="true">{menuOpen ? "−" : "+"}</span>
@@ -103,20 +102,6 @@ export default function Home() {
             Let’s talk <span aria-hidden="true">↗</span>
           </a>
         </nav>
-        <div className="rail-profile">
-          <img
-            src="/img/pragatheeswaran-k.webp"
-            width="1100"
-            height="851"
-            alt="Pragatheeswaran Kasinathan"
-            fetchPriority="high"
-          />
-          <div>
-            <strong>Pragatheeswaran Kasinathan</strong>
-            <p>Technical Analyst · Ideas2IT</p>
-            <span>Based in Chennai ↗</span>
-          </div>
-        </div>
       </header>
       <main id="main">
         <HomeBanner />
