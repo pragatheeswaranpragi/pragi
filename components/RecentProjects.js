@@ -44,16 +44,17 @@ export default function RecentProjects() {
         <div>
           <p className="eyebrow">04 / Personal projects</p>
           <h2 id="recent-builds-title">
-            Built for play.
+            Built for everyday life.
             <br />
-            Made to explore.
+            And a little adventure.
           </h2>
         </div>
         <p>
-          Two recent builds, from organising
-          <br />a game night to imagining an arena.
+          Personal products, from making money clearer
+          to bringing people together for a game night.
         </p>
       </div>
+      <VaravuSelavuShowcase />
       <div className="recent-grid">
         {builds.map((project, index) => (
           <article
@@ -89,6 +90,59 @@ export default function RecentProjects() {
         ))}
       </div>
     </section>
+  );
+}
+
+function VaravuSelavuShowcase() {
+  return (
+    <article className="vs-project reveal" id="varavuselavu" aria-labelledby="vs-project-title">
+      <div className="vs-project-copy">
+        <p className="eyebrow">Personal finance / Mobile-first PWA</p>
+        <div className="vs-project-brand">
+          <img src="/img/varavuselavu-icon.svg" width="52" height="52" alt="" loading="lazy" />
+          <h3 id="vs-project-title">VaravuSelavu</h3>
+        </div>
+        <p className="vs-project-tagline">A little clarity, every day.</p>
+        <p className="vs-project-description">
+          A personal finance app that brings income, expenses, commitments and
+          savings goals into one place. Shared household spaces and separate
+          debt collection rooms support the money people manage together.
+        </p>
+        <ul className="recent-features" aria-label="VaravuSelavu highlights">
+          <li>Expenses & commitments</li>
+          <li>Shared households</li>
+          <li>Debt collection rooms</li>
+          <li>Offline queue & CSV export</li>
+        </ul>
+        <a className="vs-project-link" href="https://vsvaravuselavu.vercel.app/" target="_blank" rel="noopener noreferrer">
+          Explore VaravuSelavu <span aria-hidden="true">↗</span>
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
+        <details className="recent-details">
+          <summary>Behind the build <span aria-hidden="true">+</span></summary>
+          <p>
+            Built with JavaScript, Supabase Auth and PostgreSQL, with an
+            IndexedDB queue for offline changes and an installable PWA shell.
+            Personal, household and collection records stay in separate spaces.
+            Commitment schedules distinguish planned payments from money already
+            spent, while collection rooms track repayments and member roles.
+          </p>
+        </details>
+      </div>
+      <figure className="vs-project-visual">
+        <div className="vs-visual-top"><span>VS — Varavu Selavu</span><span className="vs-visual-dot" aria-hidden="true" /></div>
+        <p className="vs-visual-headline">Your money.<br /><em>A clearer picture.</em></p>
+        <div className="vs-visual-spaces" aria-label="Separate spaces for personal finances, household finances and debt collection">
+          <span>Personal</span><span>Household</span><span>Collections</span>
+        </div>
+        <div className="vs-visual-flow">
+          <div><span className="vs-flow-arrow" aria-hidden="true">↙</span><p>Money in</p><span>Income & transfers</span></div>
+          <div><span className="vs-flow-arrow" aria-hidden="true">↗</span><p>Money out</p><span>Expenses & payments</span></div>
+        </div>
+        <div className="vs-visual-plan"><span aria-hidden="true">✓</span><div><p>Plan ahead. Track what’s paid.</p><span>Commitments · Goals · Repayments</span></div></div>
+        <figcaption>Product illustration · No personal financial data</figcaption>
+      </figure>
+    </article>
   );
 }
 
