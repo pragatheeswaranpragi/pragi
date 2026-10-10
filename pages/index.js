@@ -9,10 +9,26 @@ import { profile, personalProjects } from "../lib/content";
 import { installPortfolioMotion } from "../lib/portfolio-motion";
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [copyStatus, setCopyStatus] = useState("");
   const menuRef = useRef(null);
   useEffect(() => installPortfolioMotion(document), []);
+  useEffect(() => {
+    if (!("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-15% 0px -70% 0px" },
+    );
+    document
+      .querySelectorAll("main > section")
+      .forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     if (!menuOpen) return;
     const onEscape = (event) => {
@@ -46,6 +62,7 @@ export default function Home() {
         >
           <BrandMark />
         </a>
+        <span className="rail-edition">SELECTED WORK / 2026</span>
         <button
           className="menu-toggle"
           ref={menuRef}
@@ -67,18 +84,39 @@ export default function Home() {
             ["Experience", "work"],
             ["About", "about"],
           ].map(([label, id]) => (
-            <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>
+            <a
+              key={id}
+              href={`#${id}`}
+              className={activeSection === id ? "is-current" : undefined}
+              aria-current={activeSection === id ? "location" : undefined}
+              onClick={() => setMenuOpen(false)}
+            >
               {label}
             </a>
           ))}
           <a
-            className="nav-contact"
+            className={`nav-contact${activeSection === "contact" ? " is-current" : ""}`}
+            aria-current={activeSection === "contact" ? "location" : undefined}
             href="#contact"
             onClick={() => setMenuOpen(false)}
           >
             Let’s talk <span aria-hidden="true">↗</span>
           </a>
         </nav>
+        <div className="rail-profile">
+          <img
+            src="/img/pragatheeswaran-k.webp"
+            width="1100"
+            height="851"
+            alt="Pragatheeswaran Kasinathan"
+            fetchPriority="high"
+          />
+          <div>
+            <strong>Pragatheeswaran Kasinathan</strong>
+            <p>Technical Analyst · Ideas2IT</p>
+            <span>Based in Chennai ↗</span>
+          </div>
+        </div>
       </header>
       <main id="main">
         <HomeBanner />
@@ -92,11 +130,7 @@ export default function Home() {
         >
           <div>
             <p className="eyebrow">04 / About me</p>
-            <h2 id="about-title">
-              Built to last,
-              <br />
-              <em>and easy to use.</em>
-            </h2>
+            <h2 id="about-title">Behind the work.</h2>
           </div>
           <div className="about-copy reveal">
             <p>

@@ -43,8 +43,8 @@ export default function RecentProjects() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow">01 / Selected projects</p>
-          <h2 id="recent-builds-title">Products I’ve built.</h2>
+          <p className="eyebrow">01 / The project collection</p>
+          <h2 id="recent-builds-title">Selected explorations.</h2>
         </div>
         <p>
           Personal finance, game nights and a browser-based arena. Built around
@@ -59,6 +59,7 @@ export default function RecentProjects() {
             id={project.id}
             key={project.id}
           >
+            <ScreenshotPreview project={project} />
             <div className="recent-project-top">
               <span className="eyebrow">{project.category}</span>
               <span className="recent-index" aria-hidden="true">
@@ -66,8 +67,6 @@ export default function RecentProjects() {
               </span>
             </div>
             <h3>{project.name}</h3>
-
-            <ScreenshotPreview project={project} />
             <p className="recent-description">{project.description}</p>
             <ul
               className="recent-features"
