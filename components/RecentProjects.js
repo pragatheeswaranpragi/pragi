@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { openScreenshot, closeScreenshot } from "../lib/portfolio-motion";
 const builds = [
   {
     id: "arena-night",
@@ -42,16 +43,12 @@ export default function RecentProjects() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow">04 / Personal projects</p>
-          <h2 id="recent-builds-title">
-            Built for everyday life.
-            <br />
-            And a little adventure.
-          </h2>
+          <p className="eyebrow">01 / Selected projects</p>
+          <h2 id="recent-builds-title">Products I’ve built.</h2>
         </div>
         <p>
-          Personal products, from making money clearer
-          to bringing people together for a game night.
+          Personal finance, game nights and a browser-based arena. Built around
+          things I wanted to use.
         </p>
       </div>
       <VaravuSelavuShowcase />
@@ -69,7 +66,7 @@ export default function RecentProjects() {
               </span>
             </div>
             <h3>{project.name}</h3>
-            <p className="recent-tagline">{project.tagline}</p>
+
             <ScreenshotPreview project={project} />
             <p className="recent-description">{project.description}</p>
             <ul
@@ -82,9 +79,14 @@ export default function RecentProjects() {
             </ul>
             <details className="recent-details">
               <summary>
-                Behind the build <span aria-hidden="true">+</span>
+                Behind the build{" "}
+                <span className="disclosure-icon" aria-hidden="true">
+                  +
+                </span>
               </summary>
-              <p>{project.detail}</p>
+              <div className="details-content">
+                <p>{project.detail}</p>
+              </div>
             </details>
           </article>
         ))}
@@ -95,11 +97,21 @@ export default function RecentProjects() {
 
 function VaravuSelavuShowcase() {
   return (
-    <article className="vs-project reveal" id="varavuselavu" aria-labelledby="vs-project-title">
+    <article
+      className="vs-project reveal"
+      id="varavuselavu"
+      aria-labelledby="vs-project-title"
+    >
       <div className="vs-project-copy">
         <p className="eyebrow">Personal finance / Mobile-first PWA</p>
         <div className="vs-project-brand">
-          <img src="/img/varavuselavu-icon.svg" width="52" height="52" alt="" loading="lazy" />
+          <img
+            src="/img/varavuselavu-icon.svg"
+            width="52"
+            height="52"
+            alt=""
+            loading="lazy"
+          />
           <h3 id="vs-project-title">VaravuSelavu</h3>
         </div>
         <p className="vs-project-tagline">A little clarity, every day.</p>
@@ -114,33 +126,78 @@ function VaravuSelavuShowcase() {
           <li>Debt collection rooms</li>
           <li>Offline queue & CSV export</li>
         </ul>
-        <a className="vs-project-link" href="https://vsvaravuselavu.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <a
+          className="vs-project-link"
+          href="https://vsvaravuselavu.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Explore VaravuSelavu <span aria-hidden="true">↗</span>
           <span className="sr-only"> (opens in a new tab)</span>
         </a>
         <details className="recent-details">
-          <summary>Behind the build <span aria-hidden="true">+</span></summary>
-          <p>
-            Built with JavaScript, Supabase Auth and PostgreSQL, with an
-            IndexedDB queue for offline changes and an installable PWA shell.
-            Personal, household and collection records stay in separate spaces.
-            Commitment schedules distinguish planned payments from money already
-            spent, while collection rooms track repayments and member roles.
-          </p>
+          <summary>
+            Behind the build{" "}
+            <span className="disclosure-icon" aria-hidden="true">
+              +
+            </span>
+          </summary>
+          <div className="details-content">
+            <p>
+              Built with JavaScript, Supabase Auth and PostgreSQL, with an
+              IndexedDB queue for offline changes and an installable PWA shell.
+              Personal, household and collection records stay in separate
+              spaces. Commitment schedules distinguish planned payments from
+              money already spent, while collection rooms track repayments and
+              member roles.
+            </p>
+          </div>
         </details>
       </div>
       <figure className="vs-project-visual">
-        <div className="vs-visual-top"><span>VS — Varavu Selavu</span><span className="vs-visual-dot" aria-hidden="true" /></div>
-        <p className="vs-visual-headline">Your money.<br /><em>A clearer picture.</em></p>
-        <div className="vs-visual-spaces" aria-label="Separate spaces for personal finances, household finances and debt collection">
-          <span>Personal</span><span>Household</span><span>Collections</span>
+        <div className="vs-visual-top">
+          <span>VS — Varavu Selavu</span>
+          <span className="vs-visual-dot" aria-hidden="true" />
+        </div>
+        <p className="vs-visual-headline">
+          Your money.
+          <br />
+          <em>A clearer picture.</em>
+        </p>
+        <div
+          className="vs-visual-spaces"
+          aria-label="Separate spaces for personal finances, household finances and debt collection"
+        >
+          <span>Personal</span>
+          <span>Household</span>
+          <span>Collections</span>
         </div>
         <div className="vs-visual-flow">
-          <div><span className="vs-flow-arrow" aria-hidden="true">↙</span><p>Money in</p><span>Income & transfers</span></div>
-          <div><span className="vs-flow-arrow" aria-hidden="true">↗</span><p>Money out</p><span>Expenses & payments</span></div>
+          <div>
+            <span className="vs-flow-arrow" aria-hidden="true">
+              ↙
+            </span>
+            <p>Money in</p>
+            <span>Income & transfers</span>
+          </div>
+          <div>
+            <span className="vs-flow-arrow" aria-hidden="true">
+              ↗
+            </span>
+            <p>Money out</p>
+            <span>Expenses & payments</span>
+          </div>
         </div>
-        <div className="vs-visual-plan"><span aria-hidden="true">✓</span><div><p>Plan ahead. Track what’s paid.</p><span>Commitments · Goals · Repayments</span></div></div>
-        <figcaption>Product illustration · No personal financial data</figcaption>
+        <div className="vs-visual-plan">
+          <span aria-hidden="true">✓</span>
+          <div>
+            <p>Plan ahead. Track what’s paid.</p>
+            <span>Commitments · Goals · Repayments</span>
+          </div>
+        </div>
+        <figcaption>
+          Product illustration · No personal financial data
+        </figcaption>
       </figure>
     </article>
   );
@@ -161,10 +218,7 @@ function ScreenshotPreview({ project }) {
           data-dialog={`preview-${project.id}`}
           aria-label={`Enlarge ${project.name} screenshot`}
           onClick={(event) => {
-            if (dialogRef.current?.showModal) {
-              event.preventDefault();
-              dialogRef.current.showModal();
-            }
+            if (openScreenshot(dialogRef.current)) event.preventDefault();
           }}
         >
           <img
@@ -189,13 +243,24 @@ function ScreenshotPreview({ project }) {
         id={`preview-${project.id}`}
         className="screenshot-dialog"
         aria-labelledby={`preview-title-${project.id}`}
+        onCancel={(event) => {
+          event.preventDefault();
+          closeScreenshot(event.currentTarget);
+        }}
         onClick={(event) => {
-          if (event.target === event.currentTarget) event.currentTarget.close();
+          if (event.target === event.currentTarget)
+            closeScreenshot(event.currentTarget);
         }}
       >
         <div className="screenshot-dialog-top">
           <h3 id={`preview-title-${project.id}`}>{project.name}</h3>
-          <form method="dialog">
+          <form
+            method="dialog"
+            onSubmit={(event) => {
+              event.preventDefault();
+              closeScreenshot(dialogRef.current);
+            }}
+          >
             <button aria-label={`Close ${project.name} screenshot`}>
               Close <span aria-hidden="true">×</span>
             </button>

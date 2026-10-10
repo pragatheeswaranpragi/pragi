@@ -27,39 +27,23 @@ export default function PackageShowcase() {
       aria-labelledby="opensource-title"
     >
       <div className="package-topline">
-        <p className="eyebrow">01 / Built by me. Published for everyone.</p>
+        <p className="eyebrow">02 / Open source</p>
         <span className="package-release">
           npm package <span aria-hidden="true">·</span> v1.1.3
         </span>
       </div>
       <div className="package-layout">
         <div className="package-story">
-          <div className="package-emblem" aria-hidden="true">
-            <span>{"{ "}</span>p<span>{" }"}</span>
-          </div>
           <h2 id="opensource-title">
             Pragi<span>String</span>
             <i aria-hidden="true">.</i>
           </h2>
-          <p className="package-lead">
-            The little utilities
-            <br />
-            you shouldn’t have to rewrite.
-          </p>
           <p className="package-description">
             I built pragi-string to handle the everyday formatting jobs: text,
             numbers and time. A small JavaScript package, made for the details
             that keep coming up.
           </p>
           <div className="package-links">
-            <a
-              href="https://npm.io/package/pragi-string"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button primary"
-            >
-              Explore the package ↗
-            </a>
             <a
               href="https://www.npmjs.com/package/pragi-string"
               target="_blank"
@@ -131,6 +115,7 @@ export default function PackageShowcase() {
             <div className="demo-output">
               <span>THE RESULT</span>
               <output
+                key={`${mode}-${input}`}
                 htmlFor="package-input"
                 aria-live="polite"
                 id="package-output"
@@ -145,23 +130,6 @@ export default function PackageShowcase() {
               Running the published package, right here in your browser.
             </p>
           </div>
-        </div>
-      </div>
-      <div className="package-capabilities">
-        <div>
-          <span>01</span>
-          <h3>Text, tidied up.</h3>
-          <p>Title case, trimming and truncation.</p>
-        </div>
-        <div>
-          <span>02</span>
-          <h3>Numbers that read well.</h3>
-          <p>Words, ordinals and Roman numerals.</p>
-        </div>
-        <div>
-          <span>03</span>
-          <h3>Time, made human.</h3>
-          <p>Readable durations and digital time.</p>
         </div>
       </div>
     </section>
