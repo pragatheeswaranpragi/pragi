@@ -1,18 +1,21 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { openScreenshot, closeScreenshot } from "../lib/portfolio-motion";
 const builds = [
   {
-    id: "arena-night",
-    name: "Arena Night",
-    category: "Tournament management",
-    image: "arena-night.png",
-    width: 1889,
-    height: 955,
-    tagline: "A home for our game nights.",
+    id: "varavuselavu",
+    name: "VaravuSelavu",
+    category: "Personal finance / PWA",
     description:
-      "A tournament workspace that brings player auctions, fixtures, standings and the final result into one place.",
+      "Income, expenses, commitments and savings goals—with shared household spaces and separate debt collection rooms.",
+    features: [
+      "Expenses & commitments",
+      "Shared households",
+      "Debt collection",
+      "Offline queue & CSV export",
+    ],
     detail:
-      "Built around our family’s MK1 tournament. The interface connects the auction room with match scheduling and a points table, so the competition is easier to organise and follow.",
-    features: ["Auction room", "Fixtures & standings", "Tournament overview"],
+      "Built with JavaScript, Supabase Auth, PostgreSQL and an IndexedDB queue for offline changes. Personal, household and collection records stay in separate spaces. Commitment schedules distinguish planned payments from money already spent.",
+    href: "https://vsvaravuselavu.vercel.app/",
   },
   {
     id: "the-border",
@@ -21,19 +24,38 @@ const builds = [
     image: "the-border.png",
     width: 1919,
     height: 974,
-    tagline: "Stepping inside the arena.",
+    alt: "The Border arena with contestants, a central stage and viewing controls",
     description:
-      "An Alice in Borderland-inspired web game project, exploring a cinematic arena, contestant views and sound controls.",
-    detail:
-      "The screenshot captures the arena foundation: contestants arranged around a central stage, multiple viewing modes and an optional sound control. The game continues to evolve through separate development sprints.",
+      "An Alice in Borderland-inspired web game exploring a cinematic arena, contestant views and sound controls.",
     features: [
       "Arena & contestant views",
       "Stage perspectives",
       "Sound controls",
     ],
+    detail:
+      "The screenshot shows the arena foundation. Contestants surround a central stage, with multiple viewing modes and optional sound. The game continues to evolve through development sprints.",
+  },
+  {
+    id: "arena-night",
+    name: "Arena Night",
+    category: "Tournament management",
+    image: "arena-night.png",
+    width: 1889,
+    height: 955,
+    alt: "Arena Night tournament dashboard showing league progress and standings navigation",
+    description:
+      "A tournament workspace connecting player auctions, fixtures, standings and final results.",
+    features: ["Auction room", "Fixtures & standings", "Tournament overview"],
+    detail:
+      "Built around our family’s MK1 tournament. The auction room, match scheduling and points table make the competition easier to organise and follow.",
   },
 ];
 export default function RecentProjects() {
+  const [paused, setPaused] = useState(false);
+  function selectProject(id) {
+    const detail = document.getElementById(id);
+    if (detail) detail.open = true;
+  }
   return (
     <section
       id="recent-builds"
@@ -42,116 +64,142 @@ export default function RecentProjects() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow">04 / Personal projects</p>
-          <h2 id="recent-builds-title">
-            Built for everyday life.
-            <br />
-            And a little adventure.
-          </h2>
+          <p className="eyebrow">01 / The project collection</p>
+          <h2 id="recent-builds-title">A few things of my own.</h2>
         </div>
-        <p>
-          Personal products, from making money clearer
-          to bringing people together for a game night.
-        </p>
-      </div>
-      <VaravuSelavuShowcase />
-      <div className="recent-grid">
-        {builds.map((project, index) => (
-          <article
-            className={`recent-project recent-project-${index} reveal`}
-            id={project.id}
-            key={project.id}
+        <div className="marquee-controls">
+          <button
+            className="marquee-toggle"
+            data-marquee-toggle
+            aria-pressed={paused}
+            onClick={() => setPaused(!paused)}
           >
-            <div className="recent-project-top">
-              <span className="eyebrow">{project.category}</span>
-              <span className="recent-index" aria-hidden="true">
-                0{index + 1}
+            {paused ? "Resume motion" : "Pause motion"}{" "}
+            <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
+          </button>
+        </div>
+      </div>
+      <div className={`project-marquee${paused ? " is-paused" : ""}`}>
+        <div
+          className="marquee-window"
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget))
+              event.currentTarget.scrollLeft = 0;
+          }}
+        >
+          <div className="marquee-track">
+            {[false, true].map((duplicate) => (
+              <div
+                className={`marquee-group${duplicate ? " marquee-duplicate" : ""}`}
+                key={String(duplicate)}
+                aria-hidden={duplicate || undefined}
+              >
+                {builds.map((project, index) => (
+                  <a
+                    className={`marquee-card marquee-card-${project.id}`}
+                    href={`#${project.id}`}
+                    tabIndex={duplicate ? -1 : undefined}
+                    data-project-target={project.id}
+                    key={project.id}
+                    onClick={() => selectProject(project.id)}
+                  >
+                    <div className="marquee-art">
+                      {project.image ? (
+                        <img
+                          src={`/img/${project.image}`}
+                          width={project.width}
+                          height={project.height}
+                          alt={duplicate ? "" : project.alt}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="marquee-vs-art">
+                          <img
+                            src="/img/varavuselavu-icon.svg"
+                            width="48"
+                            height="48"
+                            alt=""
+                            loading="lazy"
+                          />
+                          <span>VS — Varavu Selavu</span>
+                          <p>
+                            A little clarity,
+                            <br />
+                            <em>every day.</em>
+                          </p>
+                          <small>Income ↙ &nbsp; Expenses ↗</small>
+                          <span className="marquee-art-note">
+                            Product illustration
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="marquee-card-meta">
+                      <span className="eyebrow">
+                        0{index + 1} / {project.category}
+                      </span>
+                      <span aria-hidden="true">↗</span>
+                    </div>
+                    <h3>{project.name}</h3>
+                    <span className="marquee-card-action">
+                      Explore the project
+                    </span>
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <p className="marquee-hint">
+        <span className="desktop-marquee-hint">
+          Hover to pause. Select a project for details.
+        </span>
+        <span className="static-marquee-hint">
+          Scroll sideways to explore. Select a project for details.
+        </span>
+      </p>
+      <div className="marquee-project-details">
+        {builds.map((project) => (
+          <details className="case-detail" id={project.id} key={project.id}>
+            <summary>
+              <span>
+                <strong>{project.name}</strong>
+                <small>{project.category}</small>
               </span>
-            </div>
-            <h3>{project.name}</h3>
-            <p className="recent-tagline">{project.tagline}</p>
-            <ScreenshotPreview project={project} />
-            <p className="recent-description">{project.description}</p>
-            <ul
-              className="recent-features"
-              aria-label={`${project.name} highlights`}
-            >
-              {project.features.map((feature) => (
-                <li key={feature}>{feature}</li>
-              ))}
-            </ul>
-            <details className="recent-details">
-              <summary>
-                Behind the build <span aria-hidden="true">+</span>
-              </summary>
+              <span className="disclosure-icon" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <div className="details-content">
+              <p>{project.description}</p>
+              <ul className="recent-features">
+                {project.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
               <p>{project.detail}</p>
-            </details>
-          </article>
+              {project.href && (
+                <a
+                  className="text-link"
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open VaravuSelavu <span aria-hidden="true">↗</span>
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              )}
+              {project.image && <ScreenshotPreview project={project} />}
+            </div>
+          </details>
         ))}
       </div>
     </section>
   );
 }
-
-function VaravuSelavuShowcase() {
-  return (
-    <article className="vs-project reveal" id="varavuselavu" aria-labelledby="vs-project-title">
-      <div className="vs-project-copy">
-        <p className="eyebrow">Personal finance / Mobile-first PWA</p>
-        <div className="vs-project-brand">
-          <img src="/img/varavuselavu-icon.svg" width="52" height="52" alt="" loading="lazy" />
-          <h3 id="vs-project-title">VaravuSelavu</h3>
-        </div>
-        <p className="vs-project-tagline">A little clarity, every day.</p>
-        <p className="vs-project-description">
-          A personal finance app that brings income, expenses, commitments and
-          savings goals into one place. Shared household spaces and separate
-          debt collection rooms support the money people manage together.
-        </p>
-        <ul className="recent-features" aria-label="VaravuSelavu highlights">
-          <li>Expenses & commitments</li>
-          <li>Shared households</li>
-          <li>Debt collection rooms</li>
-          <li>Offline queue & CSV export</li>
-        </ul>
-        <a className="vs-project-link" href="https://vsvaravuselavu.vercel.app/" target="_blank" rel="noopener noreferrer">
-          Explore VaravuSelavu <span aria-hidden="true">↗</span>
-          <span className="sr-only"> (opens in a new tab)</span>
-        </a>
-        <details className="recent-details">
-          <summary>Behind the build <span aria-hidden="true">+</span></summary>
-          <p>
-            Built with JavaScript, Supabase Auth and PostgreSQL, with an
-            IndexedDB queue for offline changes and an installable PWA shell.
-            Personal, household and collection records stay in separate spaces.
-            Commitment schedules distinguish planned payments from money already
-            spent, while collection rooms track repayments and member roles.
-          </p>
-        </details>
-      </div>
-      <figure className="vs-project-visual">
-        <div className="vs-visual-top"><span>VS — Varavu Selavu</span><span className="vs-visual-dot" aria-hidden="true" /></div>
-        <p className="vs-visual-headline">Your money.<br /><em>A clearer picture.</em></p>
-        <div className="vs-visual-spaces" aria-label="Separate spaces for personal finances, household finances and debt collection">
-          <span>Personal</span><span>Household</span><span>Collections</span>
-        </div>
-        <div className="vs-visual-flow">
-          <div><span className="vs-flow-arrow" aria-hidden="true">↙</span><p>Money in</p><span>Income & transfers</span></div>
-          <div><span className="vs-flow-arrow" aria-hidden="true">↗</span><p>Money out</p><span>Expenses & payments</span></div>
-        </div>
-        <div className="vs-visual-plan"><span aria-hidden="true">✓</span><div><p>Plan ahead. Track what’s paid.</p><span>Commitments · Goals · Repayments</span></div></div>
-        <figcaption>Product illustration · No personal financial data</figcaption>
-      </figure>
-    </article>
-  );
-}
-
 function ScreenshotPreview({ project }) {
   const dialogRef = useRef(null);
-  const alt =
-    project.id === "arena-night"
-      ? "Arena Night dashboard showing an MK1 family tournament, league progress and standings navigation"
-      : "The Border arena foundation showing six contestants around a central stage and viewing controls";
   return (
     <>
       <figure className="recent-image">
@@ -161,10 +209,7 @@ function ScreenshotPreview({ project }) {
           data-dialog={`preview-${project.id}`}
           aria-label={`Enlarge ${project.name} screenshot`}
           onClick={(event) => {
-            if (dialogRef.current?.showModal) {
-              event.preventDefault();
-              dialogRef.current.showModal();
-            }
+            if (openScreenshot(dialogRef.current)) event.preventDefault();
           }}
         >
           <img
@@ -172,32 +217,37 @@ function ScreenshotPreview({ project }) {
             width={project.width}
             height={project.height}
             loading="lazy"
-            alt={alt}
+            alt={project.alt}
           />
-          <span className="screenshot-hint">
-            View full screenshot <span aria-hidden="true">↗</span>
-          </span>
+          <span className="screenshot-hint">View full screenshot ↗</span>
         </a>
-        <figcaption>
-          {project.id === "arena-night"
-            ? "Tournament overview · Actual project screenshot"
-            : "Arena foundation · Actual project screenshot"}
-        </figcaption>
+        <figcaption>Actual project screenshot</figcaption>
       </figure>
       <dialog
         ref={dialogRef}
         id={`preview-${project.id}`}
         className="screenshot-dialog"
         aria-labelledby={`preview-title-${project.id}`}
+        onCancel={(event) => {
+          event.preventDefault();
+          closeScreenshot(event.currentTarget);
+        }}
         onClick={(event) => {
-          if (event.target === event.currentTarget) event.currentTarget.close();
+          if (event.target === event.currentTarget)
+            closeScreenshot(event.currentTarget);
         }}
       >
         <div className="screenshot-dialog-top">
           <h3 id={`preview-title-${project.id}`}>{project.name}</h3>
-          <form method="dialog">
+          <form
+            method="dialog"
+            onSubmit={(event) => {
+              event.preventDefault();
+              closeScreenshot(dialogRef.current);
+            }}
+          >
             <button aria-label={`Close ${project.name} screenshot`}>
-              Close <span aria-hidden="true">×</span>
+              Close ×
             </button>
           </form>
         </div>
@@ -206,7 +256,7 @@ function ScreenshotPreview({ project }) {
           width={project.width}
           height={project.height}
           loading="lazy"
-          alt={alt}
+          alt={project.alt}
         />
         <p>Actual project screenshot · Press Escape to close</p>
       </dialog>
